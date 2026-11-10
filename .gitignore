@@ -218,3 +218,29 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# =====================================================================
+# Project-specific rules (label-propagation)
+# =====================================================================
+
+# Datasets: keep the folder structure, not the (possibly large) data
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# LaTeX auxiliary files (the .tex sources and the final PDF are tracked)
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Operating-system clutter
+.DS_Store
+Thumbs.db

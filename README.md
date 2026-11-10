@@ -107,8 +107,7 @@ What we are going to do:
 
 ## Repository structure
 
-> The structure is being built step by step; folders marked *(planned)* do not
-> exist yet.
+Each folder contains its own short README explaining what goes inside.
 
 ```
 label-propagation/
@@ -117,11 +116,15 @@ label-propagation/
 ├── .gitignore           ← files git should not track
 ├── docs/                ← study notes on the papers
 │   └── notes_label_propagation.md
-├── src/labelprop/       ← our Python package               (planned)
-├── notebooks/           ← experiments, numbered 01_, 02_…  (planned)
-├── data/                ← datasets (large files not tracked) (planned)
-├── results/             ← figures and tables                (planned)
-└── report/              ← LaTeX report                      (planned)
+├── src/labelprop/       ← our Python package (reusable code)
+├── notebooks/           ← experiments, numbered 01_, 02_, …
+├── data/                ← datasets (contents not tracked by git)
+│   ├── raw/
+│   └── processed/
+├── results/             ← outputs of the experiments
+│   ├── figures/
+│   └── tables/
+└── report/              ← LaTeX report
 ```
 
 ## Getting started
