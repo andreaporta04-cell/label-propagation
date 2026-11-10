@@ -114,6 +114,7 @@ label-propagation/
 ├── README.md            ← this file
 ├── LICENSE              ← MIT license
 ├── .gitignore           ← files git should not track
+├── pyproject.toml       ← package configuration and dependencies
 ├── docs/                ← study notes on the papers
 │   └── notes_label_propagation.md
 ├── src/labelprop/       ← our Python package (reusable code)
@@ -129,7 +130,51 @@ label-propagation/
 
 ## Getting started
 
-*Installation instructions will be added together with the Python package.*
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/andreaporta04-cell/label-propagation.git
+cd label-propagation
+```
+
+### 2. Create an isolated Python environment
+
+Pick **one** of the two options.
+
+**Option A — conda** (if you use Anaconda; on Windows run it in the *Anaconda Prompt*):
+
+```bash
+conda create -n labelprop python=3.11
+conda activate labelprop
+```
+
+**Option B — venv** (built into Python):
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate        # Windows
+source .venv/bin/activate      # macOS / Linux
+```
+
+### 3. Install the package and its dependencies
+
+```bash
+pip install -e ".[dev]"
+```
+
+`-e` (*editable*) installs `labelprop` as a link to `src/`: every change to the
+code is picked up immediately, without reinstalling. `[dev]` adds Jupyter and
+pytest. All dependencies are listed in [`pyproject.toml`](pyproject.toml).
+
+### 4. Check that everything works
+
+```bash
+python -c "import labelprop; print(labelprop.__version__)"
+jupyter lab                     # then open the notebooks/ folder
+```
+
+Remember to **activate the environment** (step 2, second line) every time you
+open a new terminal.
 
 ## Team
 

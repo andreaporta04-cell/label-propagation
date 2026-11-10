@@ -1,0 +1,36 @@
+# Project configuration: tells pip how to install our package `labelprop`
+# and which libraries it needs. See https://packaging.python.org
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "labelprop"
+version = "0.1.0"
+description = "Semi-supervised learning with label propagation (Zhu, Ghahramani & Lafferty, 2003) - MATH-412 project, EPFL"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "MATH-412 project team" }]
+requires-python = ">=3.10"
+
+# Libraries needed to use the package
+dependencies = [
+    "numpy>=1.24",         # arrays and linear algebra
+    "scipy>=1.10",         # sparse matrices and linear solvers
+    "scikit-learn>=1.3",   # datasets, kNN, baseline classifiers
+    "matplotlib>=3.7",     # plots
+]
+
+# Extra tools for development: install with  pip install -e ".[dev]"
+[project.optional-dependencies]
+dev = [
+    "jupyterlab",          # to run the notebooks
+    "ipykernel",           # lets Jupyter / VS Code use this environment
+    "pytest",              # automated tests
+]
+
+# Where to find the package: inside src/
+[tool.setuptools.packages.find]
+where = ["src"]
